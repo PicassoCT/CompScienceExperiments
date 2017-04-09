@@ -2,7 +2,8 @@
 #include <vector>
 #include <iostream>
 #include <string>
-
+#include <stdio.h>
+#include <string.h>
 typedef unsigned char byte;
 
 class world {
@@ -30,7 +31,6 @@ public:
     void swap( world* w ) {
         memcpy( _cells, w->_cells, _wid * _hei * sizeof( byte ) );
     }
-private:
     int _wid, _hei;
     byte* _cells;
 };
@@ -128,18 +128,10 @@ public:
                 break;
         }
 
-        /* just for test - shoud read from a file */
-        /* GLIDER */
-        wrd->set( 6, 1, 1 ); wrd->set( 7, 2, 1 );
-        wrd->set( 5, 3, 1 ); wrd->set( 6, 3, 1 );
-        wrd->set( 7, 3, 1 );
-        /* BLINKER */
-        wrd->set( 1, 3, 1 ); wrd->set( 2, 3, 1 );
-        wrd->set( 3, 3, 1 );
         /******************************************/
         generation();
     }
-private:
+
     void display() {
         system( "cls" );
         int wid = wrd->wid(),
@@ -149,17 +141,33 @@ private:
             std::cout << "|";
             for( int x = 0; x < wid; x++ ) {
                 if( wrd->at( x, y ) ) std::cout << "#";
-                else std::cout << ".";
+                else std::cout << " ";
             }
             std::cout << "|\n";
         }
-        std::cout << "+" << std::string( wid, '-' ) << "+\n";
-        std::cout << "Generation: " << gen << "\n\nPress [RETURN] for the next generation...";
-        std::cin.get();
+     std::cout << "+" << std::string( wid, '-' ) << "+\n";
     }
+
+    byte getDataAt(int x, int y,byte* data,int _wid ){
+      return data[x + y * _wid];
+    }
+
+       float comparePercentage(byte* data){
+        float total=wrd->_hei*wrd->_wid;
+        float similiarityCounter=0;
+
+         for( int y = 0; y < wrd->hei(); y++ ) {
+            for( int x = 0; x < wrd->wid(); x++ ) {
+                if( wrd->at( x, y ) == getDataAt(x,y,data,wrd->_wid))
+                    similiarityCounter++;
+            }
+        }
+        return similiarityCounter/total;
+    }
+
+    private:
     void generation() {
         do {
-            display();
             rl->applyRules();
             rl->swapWrds();
             gen++;
@@ -171,16 +179,3 @@ private:
     int gen;
 };
 
-int main( int argc, char* argv[] ) {
-    cellular c( 20, 12 );
-    std::cout << "\n\t*** CELLULAR AUTOMATA ***" << "\n\n Which one you want to run?\n\n\n";
-    std::cout << " [1]\tConway's Life\n [2]\tAmoeba\n [3]\tLife 34\n [4]\tMaze\n\n > ";
-    int o;
-    do {
-        std::cin >> o;
-    }
-    while( o < 1 || o > 4 );
-    std::cin.ignore();
-    c.start( o );
-    return system( "pause" );
-}

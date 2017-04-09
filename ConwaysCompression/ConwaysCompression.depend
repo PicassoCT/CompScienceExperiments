@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1491240650 source:c:\users\picassoct\desktop\conwayscompression\compscienceexperiments\conwayscompression\conwaysgame.cpp
+	<algorithm>
+	<vector>
+	<iostream>
+	<string>
+	<stdio.h>
+	<string.h>
+
+1491233675 source:c:\users\picassoct\desktop\conwayscompression\compscienceexperiments\conwayscompression\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<cstdlib>
+	<ctime>
+
