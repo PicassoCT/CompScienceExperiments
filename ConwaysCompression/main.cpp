@@ -93,18 +93,31 @@ public:
     std::vector<encodedData> toString;
 };
 
-void playerOfGames(game* dataToEncode)
+void itterateOverGame()
+{
+
+}
+
+void playerOfGames(game* dataToEncode, std::vector<libraryGame>* playedGames)
 {
 
     game localCopy =*dataToEncode;
     //while the gameboard is not empty
     while(localCopy.isEmpty()== false)
     {
+    float bestOption=1.0;
+    encodedData* bestGame;
         //go brute force over the library, apply and/or/xor with negation
-
+    for (auto game : *playedGames ){
 
     }
 
+    }
+
+
+}
+
+void initLibrary(std::vector<libraryGame>* playedGames){
 
 }
 
@@ -116,6 +129,20 @@ void randomizeData( std::vector<byte>* testData, int range)
         it= rand() %range;
     }
 }
+
+void displayData( std::vector<byte>* testData, int line)
+{
+    int index = 0;
+    while (index < testData*.size()){
+
+
+    }
+    for (auto  it: *testData)
+    {
+        it= rand() %range;
+    }
+}
+
 
 void intiatedGameLibrary(std::vector<libraryGame>* pLibraryGame)
 {
@@ -130,10 +157,8 @@ int main()
 {
     std::vector<libraryGame> playedGames;
     game* testData= new game(256);
+    initLibrary(&playedGames);
     randomizeData(&(*testData).data,256);
-
-    //fill the library with games
-    std::cout<<bitWiseEqual(5,2);
 
     //take the testdata
 
