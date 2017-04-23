@@ -32,9 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="SimplePlayerOfGames.cpp" />
 		<Unit filename="conwaysgame.cpp" />
 		<Unit filename="conwaysgame.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="simpleplayerofgames.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
