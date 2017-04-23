@@ -69,3 +69,21 @@ For each Node beginning from Present ..
 		 the recurring escape-chances in cycles add to the chance-forrest on top of them, while at the samne time
 		cycle time is substracted as a risk from the forrest overall success.
 		A good plan is one, whos benefit holds true for the biggest future forrest.
+
+
+==OpenInfra==
+Open Infrastructure is a project, to replace traditional Internet Infrastructure with a AddHoc-Infrastructure, fashioned from Mobile Clients.
+
+The idea is thus far the following. Every member of society, is voluntarily or not, part of commonunication cells. Example?
+You rise in the morning, and your cellphone and comp, are part of the cell house/flat. You leave for work, and enter a public transportation. This is a AddHoc group, forming with some components diffrent every morning. But the busdriver is the identifying component of this group. 
+His Cellphone-node overrules dissenting members of the group, interpreting this as a erly brunch.
+You enter work, your cellphone is now part of the meta-organism called company, where you join a cell, called team.
+If a Communicationpartner - lets call him Adam, wants to send you a Message in this network, he would throw it out to the node with the highest connection density (for example public transport) and a additional connection verifier, which would take a slower route (helping to identify sinkholes).
+This density increses, as the message reaches a hub (Transitstation, airport).
+By now, the message has met some organism, who knows somebody, who knows your city.
+The Message of Adam follows these organisms, routed by the likelihood you would b connected to these organisms.
+It reaches the busdriver, who knows you will likely join for a drive home.
+You actually do this, the message arrives.
+Some little later, the sink identifier reaches your home and returns with the knowledge that you got your message.
+
+Its a rough draft, but has the potential to piss of a lot of despots.
